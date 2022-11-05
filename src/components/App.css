@@ -1,0 +1,47 @@
+.content {
+  display: flex;
+  justify-content: center;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 25px;
+  padding: 25px;
+}
+
+Button {
+  background-color: #191919;
+  color: white;
+  border: 1px solid #191919;
+  border-radius: 25px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.connector {
+  background-color: orange;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 5px;
+  border-radius: 20px;
+}
+
+.address {
+  margin-bottom: 10px;
+}
+
+.siwe {
+  margin-bottom: 15px;
+}
