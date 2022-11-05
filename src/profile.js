@@ -21,7 +21,7 @@ let Profile = () => {
         <ENS address={address} />
         <div>Connected to {connector.name}</div>
         <button onClick={disconnect}>Disconnect</button>
-        <Sign />
+        {/* <Sign /> */}
         <ProveTwitter />
       </div>
     );
