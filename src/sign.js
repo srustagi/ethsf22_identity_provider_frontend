@@ -2,17 +2,18 @@ import * as React from 'react'
 import { useSignMessage } from 'wagmi'
 import { verifyMessage } from 'ethers/lib/utils'
  
-export default function Sign() {
-  const recoveredAddress = React.useRef('')
+let Sign = () => {
+  const recoveredAddress = React.useRef('');
   const { data, error, isLoading, signMessage } = useSignMessage({
     onSuccess(data, variables) {
       // Verify signature when sign message succeeds
       const address = verifyMessage(variables.message, data)
       recoveredAddress.current = address
     },
-  })
+  });
  
-  return (
+  
+  let res = (
     <form
       onSubmit={(event) => {
         event.preventDefault()
@@ -40,5 +41,8 @@ export default function Sign() {
  
       {error && <div>{error.message}</div>}
     </form>
-  )
+  );
+  return res;
 }
+
+export default Sign;

@@ -4,26 +4,31 @@ import {
   useDisconnect,
 } from 'wagmi'
 
- import Sign from './sign'
+import Sign from './sign'
+import ENS from './ens'
+import ProveTwitter from './ProveTwitter'
  
-export default function Profile() {
-  const { address, connector, isConnected } = useAccount()
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect()
-  const { disconnect } = useDisconnect()
+let Profile = () => {
+  const { address, connector, isConnected } = useAccount();
+  console.log(connector)
+  const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
+  const { disconnect } = useDisconnect();
  
   if (isConnected) {
-    return (
+    let res = (
       <div>
         <div>{address}</div>
+        <ENS address={address} />
         <div>Connected to {connector.name}</div>
         <button onClick={disconnect}>Disconnect</button>
-        <Sign></Sign>
+        <Sign />
+        <ProveTwitter />
       </div>
-    )
+    );
+    return res;
   }
  
-  return (
+  let res = (
     <div>
       {connectors.map((connector) => (
         <button
@@ -41,5 +46,8 @@ export default function Profile() {
  
       {error && <div>{error.message}</div>}
     </div>
-  )
+  );
+  return res;
 }
+
+export default Profile;
