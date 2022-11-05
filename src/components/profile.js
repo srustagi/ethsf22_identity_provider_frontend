@@ -4,7 +4,6 @@ import {
   useDisconnect,
 } from 'wagmi'
 
-import Sign from './sign'
 import ENS from './ens'
 import ProveTwitter from './ProveTwitter'
  
@@ -17,11 +16,11 @@ let Profile = () => {
   if (isConnected && !isConnecting && connector) {
     let res = (
       <div>
-        <div>{address}</div>
-        <ENS address={address} />
-        <div>Connected to {connector.name}</div>
+        <h1>Profile</h1>
+        <div className='siwe'>Signed in with <span className='connector'>{connector.name}</span></div>
+        <div className='address'>Address: 0x...{address.substring(address.length - 5)}</div>
+        {/* <ENS address={address} /> */}
         <button onClick={disconnect}>Disconnect</button>
-        {/* <Sign /> */}
         <ProveTwitter />
       </div>
     );

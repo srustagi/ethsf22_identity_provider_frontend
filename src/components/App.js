@@ -3,7 +3,9 @@ import Profile from './profile';
 
 function App() {
   return (
-    <Profile />
+    <div className='content'>
+      <Profile />
+    </div>
   );
 }
 
