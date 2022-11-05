@@ -9,12 +9,12 @@ import ENS from './ens'
 import ProveTwitter from './ProveTwitter'
  
 let Profile = () => {
-  const { address, connector, isConnected } = useAccount();
+  const { address, connector, isConnected, isConnecting } = useAccount();
   console.log(connector)
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
  
-  if (isConnected) {
+  if (isConnected && !isConnecting && connector) {
     let res = (
       <div>
         <div>{address}</div>
