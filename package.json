@@ -10,11 +10,15 @@
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
+    "firebase": "^9.13.0",
+    "process": "^0.11.10",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "wagmi": "^0.7.12",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "web3.storage": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
